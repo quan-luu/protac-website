@@ -556,16 +556,20 @@ h1, h2, h3, h4, h5, h6 {
   url          = {https://arxiv.org/abs/2505.18472}
 }
     </code></pre> -->
-    <pre><code>@ARTICLE{luu2025protac,
-  author={Luu, Quan Khanh and Nguyen, Dinh Quang and Nguyen, Nhan Huu and Dam, Nam Phuong and Ho, Van Anh},
-  journal={IEEE Transactions on Robotics},
-  title={Vision-Based Proximity and Tactile Sensing for Robot Arms: Design, Perception, and Control},
-  year={2025},
-  volume={41},
-  number={},
-  pages={5000-5019},
-  keywords={Robot sensing systems;Sensors;Robots;Skin;Optical switches;Cameras;Human-robot interaction;Soft sensors;Manipulators;Optical sensors;Deep learning;human-robot interaction;multimodal sensors;soft robotics;soft sensors;tactile and proximity sensor},
-  doi={10.1109/TRO.2025.3593087}}</code></pre>
+    <div style="position: relative;">
+      <button id="copy-bibtex-btn" onclick="copyBibtex()" style="position: absolute; top: 0.5rem; right: 0.5rem; padding: 0.3rem 0.6rem; font-size: 0.85rem; cursor: pointer; border: 1px solid #aaa; border-radius: 4px; background: #fff;"><i class="far fa-copy"></i></button>
+      <pre id="bibtex-block"><code>@ARTICLE{luu2025protac,
+  author  = {Luu, Quan Khanh and Nguyen, Dinh Quang and
+             Nguyen, Nhan Huu and Dam, Nam Phuong and Ho, Van Anh},
+  journal = {IEEE Transactions on Robotics},
+  title   = {Vision-Based Proximity and Tactile Sensing for
+             Robot Arms: Design, Perception, and Control},
+  year    = {2025},
+  volume  = {41},
+  pages   = {5000--5019},
+  doi     = {10.1109/TRO.2025.3593087}
+}</code></pre>
+    </div>
 </div>
 </div>
 </div>
@@ -594,6 +598,17 @@ h1, h2, h3, h4, h5, h6 {
 </div>
 </div>
 </footer>
+
+<script>
+function copyBibtex() {
+  var text = document.querySelector('#bibtex-block code').innerText;
+  navigator.clipboard.writeText(text).then(function() {
+    var btn = document.getElementById('copy-bibtex-btn');
+    btn.innerHTML = '<i class="fas fa-check"></i>';
+    setTimeout(function() { btn.innerHTML = '<i class="far fa-copy"></i>'; }, 2000);
+  });
+}
+</script>
 
 </body>
 </html>
